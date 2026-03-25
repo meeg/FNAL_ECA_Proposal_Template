@@ -3,7 +3,7 @@
 This repository facilitates the combination of user content with central style and formatting provided by FNAL.
 
 Users should enter content in the following locations (items 4-8 cover the required appendices):
-1. [info.tex](./info.tex): details for cover page
+1. [info.tex](./info.tex): details for cover page, and switches to enable/disable a table of contents and line numbering
 2. [packages.tex](./packages.tex): any additional packages used
 3. [content.tex](./content.tex): the actual proposal content
 4. [biblio.tex](./biblio.tex): references
