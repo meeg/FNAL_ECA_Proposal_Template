@@ -3,7 +3,7 @@
 This repository facilitates the combination of user content with central style and formatting provided by FNAL.
 
 Users should enter content in the following locations (items 4-8 cover the required appendices):
-1. [info.tex](./info.tex): details for cover page, and switches to enable/disable a table of contents and line numbering
+1. [info.tex](./info.tex): details for cover page, and flags to enable/disable table of contents, line numbering, and biblatex 
 2. [packages.tex](./packages.tex): any additional packages used
 3. [content.tex](./content.tex): the actual proposal content
 4. [biblio.tex](./biblio.tex): references
@@ -14,7 +14,7 @@ Users should enter content in the following locations (items 4-8 cover the requi
 
 ## References
 The template is set up to use BibLaTeX+Biber, with the bibliography generated automatically from records that you dump in [references.bib](./references.bib).
-If you prefer, by commenting/uncommenting code in [biblio.tex](./biblio.tex) you can opt to format your bibliography manually, with entries that you list in the `\thebibliography` block in that file.
+If you prefer, by toggling a flag in [info.tex](./info.tex) you can opt to format your bibliography manually, with entries that you list in the `\thebibliography` block in [biblio.tex](./biblio.tex).
 
 ## Compilation
 
