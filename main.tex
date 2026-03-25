@@ -1,5 +1,7 @@
 \documentclass[11pt]{article}
 
+\input{info}
+
 % default packages
 \usepackage[english]{babel}
 \usepackage[letterpaper,margin=1in]{geometry}
@@ -10,14 +12,18 @@
 \usepackage{fullpage}
 \usepackage{titlesec}
 \usepackage{lineno}
+\usepackage{csquotes}
 \usepackage{array}
 \usepackage{etoolbox, pdfpages}
 
+\ifdefined\biblatexflag
 % for biblatex (default)
 \usepackage[backend=biber,style=nature,sorting=none,maxbibnames=11]{biblatex}
 \addbibresource{references.bib}
-% for \thebibliography (switch in biblio.tex)
+\else
+% for \thebibliography (flag in info.tex)
 \patchcmd{\thebibliography}{\section *{\refname }}{\section{\refname}\label{sec:biblio}}{}{}
+\fi
 
 \newcommand{\collabletter}[1]{\includepdf[pages=-, pagecommand={\thispagestyle{empty}\rfoot{\thepage}}]{#1}\clearpage}
 
@@ -53,12 +59,15 @@
 \begin{document}
 % remove body header from first page
 \thispagestyle{empty}
+\hypersetup{pageanchor=false}
 % header/footer just on cover page
 \AddToShipoutPicture*{\BackgroundPic}
 \pagenumbering{gobble}
 
 \input{base/coverpage}
 \clearpage
+\hypersetup{pageanchor=true}
+
 \ifdefined\tocflag
 \thispagestyle{empty}
 \tableofcontents

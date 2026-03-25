@@ -1,14 +1,16 @@
 % NOFO says:
 % Each reference must include the names of all authors (in the same sequence in which they appear in the publication), the article and journal title, book title, volume number, page numbers, and year of publication. For research areas where there are routinely more than 10 coauthors of archival publications, you may use an abbreviated style such as the Physical Review Letters (PRL) convention for citations (listing only the first author). For example, your paper may be listed as, “A Really Important New Result,” A. Aardvark et. al. (MONGO Collaboration), PRL 999. Include only bibliographic citations. Applicants should be especially careful to follow scholarly practices in providing citations for source materials relied upon when preparing any section of the application.
 
+\ifdefined\biblatexflag
 % biblatex: do nothing here (just fill references.bib with bibtex records)
 \printbibliography[heading=bibnumbered,title={Bibliography \& References Cited}]
-
+\else
 % manual formatting: fill this block with a list of \bibitems (as in https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex#Bibliography:_just_a_list_of_\bibitems)
-%\begin{thebibliography}{99}
-%    \bibitem{p5_2023}
-%        Murayama, H. \emph{et al}.
-%        \emph{Exploring the Quantum Universe: Pathways to Innovation and Discovery in Particle Physics}
-%        (US Department of Energy (USDOE), Washington DC (United States). Energy Information Administration, June 7, 2023).
-%        \url{https://www.osti.gov/biblio/2368847}.
-%\end{thebibliography}
+\begin{thebibliography}{99}
+    \bibitem{p5_2023}
+        Murayama, H. \emph{et al}.
+        \emph{Exploring the Quantum Universe: Pathways to Innovation and Discovery in Particle Physics}
+        (US Department of Energy (USDOE), Washington DC (United States). Energy Information Administration, June 7, 2023).
+        \url{https://www.osti.gov/biblio/2368847}.
+\end{thebibliography}
+\fi
