@@ -19,13 +19,3 @@
 \renewcommand{\headrulewidth}{2pt}
 \renewcommand{\headrule}{\vskip-0.5\baselineskip\hbox to\headwidth{%
     \color{NALblue}\leaders\hrule height \headrulewidth\hfill}}
-
-% blank footnote for Buy America boilerplate
-% https://tex.stackexchange.com/questions/562763/footnote-without-reference
-\let\svthefootnote\thefootnote
-\newcommand\blankfootnote[1]{%
-  \begin{NoHyper}
-    \let\thefootnote\relax\footnotetext{#1}%
-    \let\thefootnote\svthefootnote%
-  \end{NoHyper}
-}

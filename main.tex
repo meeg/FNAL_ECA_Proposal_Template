@@ -13,15 +13,24 @@
 \usepackage{array}
 \usepackage{etoolbox, pdfpages}
 
-% bibliography, NOFO says:
-% Each reference must include the names of all authors (in the same sequence in which they appear in the publication), the article and journal title, book title, volume number, page numbers, and year of publication. For research areas where there are routinely more than 10 coauthors of archival publications, you may use an abbreviated style such as the Physical Review Letters (PRL) convention for citations (listing only the first author). For example, your paper may be listed as, “A Really Important New Result,” A. Aardvark et. al. (MONGO Collaboration), PRL 999. Include only bibliographic citations. Applicants should be especially careful to follow scholarly practices in providing citations for source materials relied upon when preparing any section of the application.
 % for biblatex (default)
 \usepackage[backend=biber,style=nature,sorting=none,maxbibnames=11]{biblatex}
 \addbibresource{references.bib}
-% for \thebibliography (look in biblio.tex)
+% for \thebibliography (switch in biblio.tex)
 \patchcmd{\thebibliography}{\section *{\refname }}{\section{\refname}\label{sec:biblio}}{}{}
 
 \newcommand{\collabletter}[1]{\includepdf[pages=-, pagecommand={\thispagestyle{empty}\rfoot{\thepage}}]{#1}\clearpage}
+
+% blank footnote for Buy America boilerplate
+% https://tex.stackexchange.com/questions/562763/footnote-without-reference
+\let\svthefootnote\thefootnote
+\newcommand\blankfootnote[1]{%
+  \begin{NoHyper}
+    \let\thefootnote\relax\footnotetext{#1}%
+    \let\thefootnote\svthefootnote%
+  \end{NoHyper}
+}
+
 \pdfminorversion=7
 
 \setlength{\pdfpagewidth}{8.5in}
