@@ -13,7 +13,7 @@ Users should enter content in the following locations (items 4-8 cover the requi
 8. [other.tex](./other.tex): other attachments (e.g. letters of collaboration using the `\collabletter{}` command)
 
 ## References
-The template is set up to use BibLaTeX+Biber, with the bibliogrpahy generated automatically from records that you dump in [references.bib](./references.bib).
+The template is set up to use BibLaTeX+Biber, with the bibliography generated automatically from records that you dump in [references.bib](./references.bib).
 If you prefer, by commenting/uncommenting code in [biblio.tex](./biblio.tex) you can opt to format your bibliography manually, with entries that you list in the `\thebibliography` block in that file.
 
 ## Compilation
